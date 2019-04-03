@@ -1,0 +1,55 @@
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe 
+Build flags: 
+Id flags: 
+
+The output was:
+2
+Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+CMakeCCompilerId.c
+Microsoft (R) Incremental Linker Version 14.00.24215.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCCompilerId.exe 
+CMakeCCompilerId.obj 
+LINK : fatal error LNK1104: cannot open file 'LIBCMT.lib'
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/cl.exe 
+Build flags: 
+Id flags: 
+
+The output was:
+2
+Microsoft (R) C/C++ Optimizing Compiler Version 19.00.24215.1 for x86
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+CMakeCXXCompilerId.cpp
+Microsoft (R) Incremental Linker Version 14.00.24215.1
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCXXCompilerId.exe 
+CMakeCXXCompilerId.obj 
+LINK : fatal error LNK1104: cannot open file 'LIBCMT.lib'
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: C:/Users/QuyenPham/AndroidStudioProjects/Version1/app/src/main/cpp/CMakeFiles/CMakeTmp
+
+Run Build Command:"nmake" "/NOLOGO" "cmTC_7520d\fast"
+	"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\nmake.exe" -f CMakeFiles\cmTC_7520d.dir\build.make /nologo -L                  CMakeFiles\cmTC_7520d.dir\build
+Building C object CMakeFiles/cmTC_7520d.dir/testCCompiler.c.obj
+	C:\PROGRA~2\MICROS~1.0\VC\bin\cl.exe  @C:\Users\QUYENP~1\AppData\Local\Temp\nm8A44.tmp
+testCCompiler.c
+Linking C executable cmTC_7520d.exe
+	C:\Users\QuyenPham\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\cmake.exe -E vs_link_exe --intdir=CMakeFiles\cmTC_7520d.dir --manifests  -- C:\MinGW\bin\ld.exe /nologo @CMakeFiles\cmTC_7520d.dir\objects1.rsp @C:\Users\QUYENP~1\AppData\Local\Temp\nm8A83.tmp
+RC Pass 1 failed to run.
+NMAKE : fatal error U1077: 'C:\Users\QuyenPham\AppData\Local\Android\Sdk\cmake\3.6.4111459\bin\cmake.exe' : return code '0xffffffff'
+Stop.
+NMAKE : fatal error U1077: '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\nmake.exe"' : return code '0x2'
+Stop.
+
+
