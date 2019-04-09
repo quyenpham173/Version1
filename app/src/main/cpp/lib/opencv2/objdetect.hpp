@@ -44,7 +44,7 @@
 #ifndef OPENCV_OBJDETECT_HPP
 #define OPENCV_OBJDETECT_HPP
 
-#include "opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 
 /**
 @defgroup objdetect Object Detection
@@ -734,10 +734,10 @@ CV_EXPORTS bool decodeQRCode(InputArray in, InputArray points, std::string &deco
 //! @} objdetect
 }
 
-#include "opencv2/objdetect/detection_based_tracker.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/objdetect/detection_based_tracker.hpp"
 
 #ifndef DISABLE_OPENCV_24_COMPATIBILITY
-#include "opencv2/objdetect/objdetect_c.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/objdetect/objdetect_c.h"
 #endif
 
 #endif

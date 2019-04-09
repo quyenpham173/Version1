@@ -32,8 +32,8 @@
 #define OPENCV_FLANN_TIMER_H
 
 #include <time.h>
-#include "opencv2/core.hpp"
-#include "opencv2/core/utility.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/utility.hpp"
 
 namespace cvflann
 {

@@ -73,6 +73,6 @@ Check @ref tutorial_dnn_yolo "the corresponding tutorial" for more details
 */
 /** @example samples/dnn/text_detection.cpp
 */
-#include <opencv2/dnn/dnn.hpp>
+#include </home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/dnn/dnn.hpp>
 
 #endif /* OPENCV_DNN_HPP */

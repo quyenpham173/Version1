@@ -49,15 +49,15 @@
 #  error core.hpp header must be compiled as C++
 #endif
 
-#include "opencv2/core/cvdef.h"
-#include "opencv2/core/version.hpp"
-#include "opencv2/core/base.hpp"
-#include "opencv2/core/cvstd.hpp"
-#include "opencv2/core/traits.hpp"
-#include "opencv2/core/matx.hpp"
-#include "opencv2/core/types.hpp"
-#include "opencv2/core/mat.hpp"
-#include "opencv2/core/persistence.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvdef.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/version.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/base.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvstd.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/traits.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/matx.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/types.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/mat.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/persistence.hpp"
 
 /**
 @defgroup core Core functionality
@@ -3276,10 +3276,10 @@ template<> struct ParamType<Scalar>
 
 } //namespace cv
 
-#include "opencv2/core/operations.hpp"
-#include "opencv2/core/cvstd.inl.hpp"
-#include "opencv2/core/utility.hpp"
-#include "opencv2/core/optim.hpp"
-#include "opencv2/core/ovx.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/operations.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvstd.inl.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/utility.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/optim.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/ovx.hpp"
 
 #endif /*OPENCV_CORE_HPP*/

@@ -91,6 +91,7 @@ package com.example.version1;
         import org.opencv.android.BaseLoaderCallback;
         import org.opencv.android.LoaderCallbackInterface;
         import org.opencv.android.Utils;
+        import org.opencv.core.CvType;
         import org.opencv.core.Mat;
 
         import java.io.File;
@@ -188,7 +189,7 @@ public class CaptureImage extends AppCompatActivity {
                             break;
                         case STATE_WAIT_LOCK:
                             Integer afState = result.get(CaptureResult.CONTROL_AF_STATE);
-                            if (afState == CaptureRequest.CONTROL_AF_STATE_FOCUSED_LOCKED || afState == 0) {
+                            if (afState == CaptureRequest.CONTROL_AF_STATE_FOCUSED_LOCKED || afState == null) {
                                 unlockFocus();
                                 Toast.makeText(getApplicationContext(), "Focus Lock", Toast.LENGTH_SHORT).show();
                                 captureStillImage();
@@ -239,7 +240,7 @@ public class CaptureImage extends AppCompatActivity {
 
     private static File imageFile;
 
-    private class ImageSave implements Runnable {
+    public class ImageSave implements Runnable {
         private Image image;
         private final ImageReader imageReader;
 
@@ -254,16 +255,47 @@ public class CaptureImage extends AppCompatActivity {
 
         @Override
         public void run() {
+            Log.d("testImage", "run begin");
             ByteBuffer byteBuffer = image.getPlanes()[0].getBuffer();
             byte[] bytes = new byte[byteBuffer.remaining()];
             byteBuffer.get(bytes);
-            Bitmap mbitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length,null);
-/*            final Mat input = new Mat();
-            Utils.bitmapToMat(bitmap, input);
-            final Mat output = new Mat();*/
-            Mat mymat = new Mat();
+            Bitmap mbitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+/*            Mat mymat = new Mat();
             Utils.bitmapToMat(mbitmap, mymat);
-            jprocess(mymat);
+            int test = getvalue(mymat);*/
+            //Log.d("testImage", "run: "+ test);
+/*            private static void sendBitmapToNative(NativeBitmap mbitmap) {
+                int width = mbitmap.getWidth();
+                int height = mbitmap.getHeight();
+                nativeInitBitmap(width, height);
+                int[] pixels = new int[width];
+                for (int y = 0; y < height; y++) {
+                    mbitmap.getPixels(pixels, 0, width, 0, y, width, 1);
+                    //gets pixels of the y’th row
+                    nativeSetBitmapRow(y, pixels);
+                }
+            }*/
+/*            Mat inMat = new Mat(mbitmap.getWidth(), mbitmap.getHeight(), CvType.CV_8UC3);
+            Mat outMat = new Mat();
+            Utils.bitmapToMat(mbitmap, inMat);
+            getvalue(effectType % 100, val, inputMat.getNativeObjAddr(), outputMat.getNativeObjAddr());
+            inputMat.release();
+
+            if (outputMat != null) {
+                Bitmap outbit = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), bitmap.getConfig());
+                Utils.matToBitmap(outputMat, outbit);
+                outputMat.release();
+                return outbit;
+            }
+            return bitmap.copy(bitmap.getConfig(), true);*/
+            int width = mbitmap.getWidth();
+            int height = mbitmap.getHeight();
+            nativeInitBitmap(width, height);
+            int[] pixels = new int[width];
+            for (int y = 0; y < height; y++) {
+                mbitmap.getPixels(pixels, 0, width, 0, y, width, 1);
+                nativeSetBitmapRow(y, pixels);
+            }
             FileOutputStream fileOutputStream = null;
             try {
                 fileOutputStream = new FileOutputStream(imageFile);
@@ -275,7 +307,13 @@ public class CaptureImage extends AppCompatActivity {
             }
             image.close();
         }
-        public native void jprocess(Mat mat);
+        private boolean isEnhance(int effectType) {
+            return (effectType / 300 == 1);
+        }
+     //   public native void jprocess(Mat mat);
+        private native int getvalue(Mat mat);
+        public native int nativeInitBitmap(int width, int height);
+        public native void nativeSetBitmapRow(int y, int[] pixels);
     }
 /*    private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -537,6 +575,7 @@ public class CaptureImage extends AppCompatActivity {
     }
 
     private void captureStillImage() {
+        Log.d(TAG, "captureStillImage: begin");
         try {
             CaptureRequest.Builder captureStill = cameraDevice.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE);
             captureStill.addTarget(imageReader.getSurface());
@@ -575,6 +614,7 @@ public class CaptureImage extends AppCompatActivity {
         System.loadLibrary("Preprocess");
     }
 /*
+
 
 
     private native int DetectPage();*/

@@ -44,9 +44,9 @@
 #ifndef OPENCV_CALIB3D_HPP
 #define OPENCV_CALIB3D_HPP
 
-#include "opencv2/core.hpp"
-#include "opencv2/features2d.hpp"
-#include "opencv2/core/affine.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/features2d.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/affine.hpp"
 
 /**
   @defgroup calib3d Camera Calibration and 3D Reconstruction
@@ -2473,7 +2473,7 @@ optimization. It stays at the center or at a different location specified when C
 } //end namespace cv
 
 #ifndef DISABLE_OPENCV_24_COMPATIBILITY
-#include "opencv2/calib3d/calib3d_c.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/calib3d/calib3d_c.h"
 #endif
 
 #endif

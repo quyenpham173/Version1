@@ -45,7 +45,7 @@
 #import <Accelerate/Accelerate.h>
 #import <AVFoundation/AVFoundation.h>
 #import <ImageIO/ImageIO.h>
-#include "opencv2/core/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/core.hpp"
 
 //! @addtogroup imgcodecs_ios
 //! @{

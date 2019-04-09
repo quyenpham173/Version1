@@ -43,7 +43,7 @@
 #ifndef OPENCV_STITCHING_MOTION_ESTIMATORS_HPP
 #define OPENCV_STITCHING_MOTION_ESTIMATORS_HPP
 
-#include "opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 #include "matchers.hpp"
 #include "util.hpp"
 #include "camera.hpp"

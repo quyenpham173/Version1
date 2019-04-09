@@ -44,10 +44,10 @@
 #define OPENCV_VIDEOSTAB_WOBBLE_SUPPRESSION_HPP
 
 #include <vector>
-#include "opencv2/core.hpp"
-#include "opencv2/core/cuda.hpp"
-#include "opencv2/videostab/global_motion.hpp"
-#include "opencv2/videostab/log.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cuda.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/videostab/global_motion.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/videostab/log.hpp"
 
 namespace cv
 {

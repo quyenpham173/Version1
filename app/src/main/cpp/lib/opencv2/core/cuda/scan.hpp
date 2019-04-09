@@ -43,10 +43,10 @@
 #ifndef OPENCV_CUDA_SCAN_HPP
 #define OPENCV_CUDA_SCAN_HPP
 
-#include "opencv2/core/cuda/common.hpp"
-#include "opencv2/core/cuda/utility.hpp"
-#include "opencv2/core/cuda/warp.hpp"
-#include "opencv2/core/cuda/warp_shuffle.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cuda/common.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cuda/utility.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cuda/warp.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cuda/warp_shuffle.hpp"
 
 /** @file
  * @deprecated Use @ref cudev instead.

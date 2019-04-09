@@ -43,10 +43,10 @@
 #ifndef OPENCV_SHAPE_HPP
 #define OPENCV_SHAPE_HPP
 
-#include "opencv2/shape/emdL1.hpp"
-#include "opencv2/shape/shape_transformer.hpp"
-#include "opencv2/shape/hist_cost.hpp"
-#include "opencv2/shape/shape_distance.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/shape/emdL1.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/shape/shape_transformer.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/shape/hist_cost.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/shape/shape_distance.hpp"
 
 /**
   @defgroup shape Shape Distance and Matching

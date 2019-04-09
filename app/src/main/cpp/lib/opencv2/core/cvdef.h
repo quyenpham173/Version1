@@ -176,7 +176,7 @@ namespace cv { namespace debug_build_guard { } using namespace debug_build_guard
 #undef Complex
 
 #include <limits.h>
-#include "opencv2/core/hal/interface.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/hal/interface.h"
 
 #if defined __ICL
 #  define CV_ICC   __ICL
@@ -747,7 +747,7 @@ protected:
 //! @}
 
 #ifndef __cplusplus
-#include "opencv2/core/fast_math.hpp" // define cvRound(double)
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/fast_math.hpp" // define cvRound(double)
 #endif
 
 #endif // OPENCV_CORE_CVDEF_H

@@ -53,7 +53,7 @@
 #  warning Detected Apple 'check' macro definition, it can cause build conflicts. Please, include this header before any Apple headers.
 #endif
 
-#include "opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 #include <ostream>
 
 #ifdef CV_CXX11
@@ -1352,7 +1352,7 @@ CV_EXPORTS int getThreadID();
 } //namespace cv
 
 #ifndef DISABLE_OPENCV_24_COMPATIBILITY
-#include "opencv2/core/core_c.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/core_c.h"
 #endif
 
 #endif //OPENCV_CORE_UTILITY_H

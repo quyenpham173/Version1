@@ -43,7 +43,7 @@
 #ifndef OPENCV_STITCHING_WARPERS_INL_HPP
 #define OPENCV_STITCHING_WARPERS_INL_HPP
 
-#include "opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 #include "warpers.hpp" // Make your IDE see declarations
 #include <limits>
 

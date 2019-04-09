@@ -48,10 +48,10 @@
 #  error matx.hpp header must be compiled as C++
 #endif
 
-#include "opencv2/core/cvdef.h"
-#include "opencv2/core/base.hpp"
-#include "opencv2/core/traits.hpp"
-#include "opencv2/core/saturate.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvdef.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/base.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/traits.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/saturate.hpp"
 
 #ifdef CV_CXX11
 #include <initializer_list>

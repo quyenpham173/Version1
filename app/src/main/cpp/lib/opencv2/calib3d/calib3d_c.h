@@ -44,7 +44,7 @@
 #ifndef OPENCV_CALIB3D_C_H
 #define OPENCV_CALIB3D_C_H
 
-#include "opencv2/core/core_c.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/core_c.h"
 
 #ifdef __cplusplus
 extern "C" {

@@ -43,7 +43,7 @@
 #ifndef OPENCV_EMD_L1_HPP
 #define OPENCV_EMD_L1_HPP
 
-#include "opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 
 namespace cv
 {

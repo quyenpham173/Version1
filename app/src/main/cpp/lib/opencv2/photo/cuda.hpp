@@ -43,7 +43,7 @@
 #ifndef OPENCV_PHOTO_CUDA_HPP
 #define OPENCV_PHOTO_CUDA_HPP
 
-#include "opencv2/core/cuda.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cuda.hpp"
 
 namespace cv { namespace cuda {
 

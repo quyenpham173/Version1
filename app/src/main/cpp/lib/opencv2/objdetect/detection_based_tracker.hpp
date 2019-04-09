@@ -44,7 +44,7 @@
 #ifndef OPENCV_OBJDETECT_DBT_HPP
 #define OPENCV_OBJDETECT_DBT_HPP
 
-#include <opencv2/core.hpp>
+#include </home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp>
 
 // After this condition removal update blacklist for bindings: modules/python/common.cmake
 #if defined(__linux__) || defined(LINUX) || defined(__APPLE__) || defined(__ANDROID__) || \

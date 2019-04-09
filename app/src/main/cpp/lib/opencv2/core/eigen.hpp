@@ -45,7 +45,7 @@
 #ifndef OPENCV_CORE_EIGEN_HPP
 #define OPENCV_CORE_EIGEN_HPP
 
-#include "opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 
 #if defined _MSC_VER && _MSC_VER >= 1200
 #pragma warning( disable: 4714 ) //__forceinline is not inlined

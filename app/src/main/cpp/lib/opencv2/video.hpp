@@ -53,11 +53,11 @@
   @}
 */
 
-#include "opencv2/video/tracking.hpp"
-#include "opencv2/video/background_segm.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/video/tracking.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/video/background_segm.hpp"
 
 #ifndef DISABLE_OPENCV_24_COMPATIBILITY
-#include "opencv2/video/tracking_c.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/video/tracking_c.h"
 #endif
 
 #endif //OPENCV_VIDEO_HPP

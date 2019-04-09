@@ -41,6 +41,6 @@
 #ifndef OPENCV_OLD_WIMAGE_HPP
 #define OPENCV_OLD_WIMAGE_HPP
 
-#include "opencv2/core/wimage.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/wimage.hpp"
 
 #endif

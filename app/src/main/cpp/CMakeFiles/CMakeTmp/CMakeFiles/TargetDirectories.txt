@@ -1,3 +1,0 @@
-C:/Users/QuyenPham/AndroidStudioProjects/Version1/app/src/main/cpp/CMakeFiles/CMakeTmp/CMakeFiles/Preprocess.dir
-C:/Users/QuyenPham/AndroidStudioProjects/Version1/app/src/main/cpp/CMakeFiles/CMakeTmp/CMakeFiles/ALL_BUILD.dir
-C:/Users/QuyenPham/AndroidStudioProjects/Version1/app/src/main/cpp/CMakeFiles/CMakeTmp/CMakeFiles/ZERO_CHECK.dir

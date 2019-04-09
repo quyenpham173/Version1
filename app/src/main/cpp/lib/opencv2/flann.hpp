@@ -43,9 +43,9 @@
 #ifndef OPENCV_FLANN_HPP
 #define OPENCV_FLANN_HPP
 
-#include "opencv2/core.hpp"
-#include "opencv2/flann/miniflann.hpp"
-#include "opencv2/flann/flann_base.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/flann/miniflann.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/flann/flann_base.hpp"
 
 /**
 @defgroup flann Clustering and Search in Multi-Dimensional Spaces

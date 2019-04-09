@@ -43,7 +43,7 @@
 #define OPENCV_DNN_DNN_HPP
 
 #include <vector>
-#include <opencv2/core.hpp>
+#include </home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp>
 
 #if !defined CV_DOXYGEN && !defined CV_DNN_DONT_ADD_EXPERIMENTAL_NS
 #define CV__DNN_EXPERIMENTAL_NS_BEGIN namespace experimental_dnn_34_v11 {
@@ -54,7 +54,7 @@ namespace cv { namespace dnn { namespace experimental_dnn_34_v11 { } using names
 #define CV__DNN_EXPERIMENTAL_NS_END
 #endif
 
-#include <opencv2/dnn/dict.hpp>
+#include </home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/dnn/dict.hpp>
 
 namespace cv {
 namespace dnn {
@@ -971,7 +971,7 @@ CV__DNN_EXPERIMENTAL_NS_END
 }
 }
 
-#include <opencv2/dnn/layer.hpp>
-#include <opencv2/dnn/dnn.inl.hpp>
+#include </home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/dnn/layer.hpp>
+#include </home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/dnn/dnn.inl.hpp>
 
 #endif  /* OPENCV_DNN_DNN_HPP */

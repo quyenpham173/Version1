@@ -49,13 +49,13 @@
 #  error base.hpp header must be compiled as C++
 #endif
 
-#include "opencv2/opencv_modules.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/opencv_modules.hpp"
 
 #include <climits>
 #include <algorithm>
 
-#include "opencv2/core/cvdef.h"
-#include "opencv2/core/cvstd.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvdef.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvstd.hpp"
 
 namespace cv
 {
@@ -700,8 +700,8 @@ CV_EXPORTS_W void setUseIPP_NE(bool flag);
 
 } // cv
 
-#include "opencv2/core/neon_utils.hpp"
-#include "opencv2/core/vsx_utils.hpp"
-#include "opencv2/core/check.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/neon_utils.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/vsx_utils.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/check.hpp"
 
 #endif //OPENCV_CORE_BASE_HPP

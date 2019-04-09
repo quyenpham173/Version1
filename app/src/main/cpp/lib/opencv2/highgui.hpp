@@ -43,12 +43,12 @@
 #ifndef OPENCV_HIGHGUI_HPP
 #define OPENCV_HIGHGUI_HPP
 
-#include "opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 #ifdef HAVE_OPENCV_IMGCODECS
-#include "opencv2/imgcodecs.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/imgcodecs.hpp"
 #endif
 #ifdef HAVE_OPENCV_VIDEOIO
-#include "opencv2/videoio.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/videoio.hpp"
 #endif
 
 /**
@@ -839,7 +839,7 @@ CV_EXPORTS int createButton( const String& bar_name, ButtonCallback on_change,
 } // cv
 
 #ifndef DISABLE_OPENCV_24_COMPATIBILITY
-#include "opencv2/highgui/highgui_c.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/highgui/highgui_c.h"
 #endif
 
 #endif

@@ -45,8 +45,8 @@
 #ifndef OPENCV_CORE_SATURATE_HPP
 #define OPENCV_CORE_SATURATE_HPP
 
-#include "opencv2/core/cvdef.h"
-#include "opencv2/core/fast_math.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvdef.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/fast_math.hpp"
 
 namespace cv
 {

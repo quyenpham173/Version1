@@ -45,7 +45,7 @@
 #define OPENCV_ML_HPP
 
 #ifdef __cplusplus
-#  include "opencv2/core.hpp"
+#  include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 #endif
 
 #ifdef __cplusplus
@@ -1964,7 +1964,7 @@ int simulatedAnnealingSolver(SimulatedAnnealingSolverSystem& solverSystem,
 }
 }
 
-#include <opencv2/ml/ml.inl.hpp>
+#include </home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/ml/ml.inl.hpp>
 
 #endif // __cplusplus
 #endif // OPENCV_ML_HPP

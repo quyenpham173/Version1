@@ -43,11 +43,11 @@
 #ifndef OPENCV_VIDEOSTAB_OPTICAL_FLOW_HPP
 #define OPENCV_VIDEOSTAB_OPTICAL_FLOW_HPP
 
-#include "opencv2/core.hpp"
-#include "opencv2/opencv_modules.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/opencv_modules.hpp"
 
 #ifdef HAVE_OPENCV_CUDAOPTFLOW
-  #include "opencv2/cudaoptflow.hpp"
+  #include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/cudaoptflow.hpp"
 #endif
 
 namespace cv

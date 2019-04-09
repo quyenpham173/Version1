@@ -44,7 +44,7 @@
 #ifndef OPENCV_CORE_TRAITS_HPP
 #define OPENCV_CORE_TRAITS_HPP
 
-#include "opencv2/core/cvdef.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvdef.h"
 
 namespace cv
 {

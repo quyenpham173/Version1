@@ -42,7 +42,7 @@
 #ifndef OPENCV_CORE_WIMAGE_HPP
 #define OPENCV_CORE_WIMAGE_HPP
 
-#include "opencv2/core/core_c.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/core_c.h"
 
 #ifdef __cplusplus
 

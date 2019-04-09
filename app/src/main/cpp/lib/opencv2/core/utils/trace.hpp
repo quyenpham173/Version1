@@ -5,7 +5,7 @@
 #ifndef OPENCV_TRACE_HPP
 #define OPENCV_TRACE_HPP
 
-#include <opencv2/core/cvdef.h>
+#include </home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvdef.h>
 
 //! @addtogroup core_logging
 // This section describes OpenCV tracing utilities.

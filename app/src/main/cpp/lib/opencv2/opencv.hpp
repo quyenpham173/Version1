@@ -45,95 +45,95 @@
 
 // File that defines what modules where included during the build of OpenCV
 // These are purely the defines of the correct HAVE_OPENCV_modulename values
-#include "opencv2/opencv_modules.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/opencv_modules.hpp"
 
 // Then the list of defines is checked to include the correct headers
 // Core library is always included --> without no OpenCV functionality available
-#include "opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 
 // Then the optional modules are checked
 #ifdef HAVE_OPENCV_CALIB3D
-#include "opencv2/calib3d.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/calib3d.hpp"
 #endif
 #ifdef HAVE_OPENCV_FEATURES2D
-#include "opencv2/features2d.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/features2d.hpp"
 #endif
 #ifdef HAVE_OPENCV_DNN
-#include "opencv2/dnn.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/dnn.hpp"
 #endif
 #ifdef HAVE_OPENCV_FLANN
-#include "opencv2/flann.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/flann.hpp"
 #endif
 #ifdef HAVE_OPENCV_HIGHGUI
-#include "opencv2/highgui.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/highgui.hpp"
 #endif
 #ifdef HAVE_OPENCV_IMGCODECS
-#include "opencv2/imgcodecs.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/imgcodecs.hpp"
 #endif
 #ifdef HAVE_OPENCV_IMGPROC
-#include "opencv2/imgproc.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/imgproc.hpp"
 #endif
 #ifdef HAVE_OPENCV_ML
-#include "opencv2/ml.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/ml.hpp"
 #endif
 #ifdef HAVE_OPENCV_OBJDETECT
-#include "opencv2/objdetect.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/objdetect.hpp"
 #endif
 #ifdef HAVE_OPENCV_PHOTO
-#include "opencv2/photo.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/photo.hpp"
 #endif
 #ifdef HAVE_OPENCV_SHAPE
-#include "opencv2/shape.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/shape.hpp"
 #endif
 #ifdef HAVE_OPENCV_STITCHING
-#include "opencv2/stitching.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/stitching.hpp"
 #endif
 #ifdef HAVE_OPENCV_SUPERRES
-#include "opencv2/superres.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/superres.hpp"
 #endif
 #ifdef HAVE_OPENCV_VIDEO
-#include "opencv2/video.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/video.hpp"
 #endif
 #ifdef HAVE_OPENCV_VIDEOIO
-#include "opencv2/videoio.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/videoio.hpp"
 #endif
 #ifdef HAVE_OPENCV_VIDEOSTAB
-#include "opencv2/videostab.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/videostab.hpp"
 #endif
 #ifdef HAVE_OPENCV_VIZ
-#include "opencv2/viz.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/viz.hpp"
 #endif
 
 // Finally CUDA specific entries are checked and added
 #ifdef HAVE_OPENCV_CUDAARITHM
-#include "opencv2/cudaarithm.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/cudaarithm.hpp"
 #endif
 #ifdef HAVE_OPENCV_CUDABGSEGM
-#include "opencv2/cudabgsegm.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/cudabgsegm.hpp"
 #endif
 #ifdef HAVE_OPENCV_CUDACODEC
-#include "opencv2/cudacodec.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/cudacodec.hpp"
 #endif
 #ifdef HAVE_OPENCV_CUDAFEATURES2D
-#include "opencv2/cudafeatures2d.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/cudafeatures2d.hpp"
 #endif
 #ifdef HAVE_OPENCV_CUDAFILTERS
-#include "opencv2/cudafilters.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/cudafilters.hpp"
 #endif
 #ifdef HAVE_OPENCV_CUDAIMGPROC
-#include "opencv2/cudaimgproc.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/cudaimgproc.hpp"
 #endif
 #ifdef HAVE_OPENCV_CUDAOBJDETECT
-#include "opencv2/cudaobjdetect.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/cudaobjdetect.hpp"
 #endif
 #ifdef HAVE_OPENCV_CUDAOPTFLOW
-#include "opencv2/cudaoptflow.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/cudaoptflow.hpp"
 #endif
 #ifdef HAVE_OPENCV_CUDASTEREO
-#include "opencv2/cudastereo.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/cudastereo.hpp"
 #endif
 #ifdef HAVE_OPENCV_CUDAWARPING
-#include "opencv2/cudawarping.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/cudawarping.hpp"
 #endif
 
 #endif

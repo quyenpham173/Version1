@@ -47,6 +47,6 @@
 //#warning "This is a deprecated opencv header provided for compatibility. Please include a header from a corresponding opencv module"
 //#endif
 
-#include "opencv2/core/core_c.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/core_c.h"
 
 #endif

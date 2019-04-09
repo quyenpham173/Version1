@@ -45,9 +45,9 @@
 #ifndef OPENCV_HAL_HPP
 #define OPENCV_HAL_HPP
 
-#include "opencv2/core/cvdef.h"
-#include "opencv2/core/cvstd.hpp"
-#include "opencv2/core/hal/interface.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvdef.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvstd.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/hal/interface.h"
 
 namespace cv { namespace hal {
 

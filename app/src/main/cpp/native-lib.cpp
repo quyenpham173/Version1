@@ -1,16 +1,16 @@
 #include <iostream>
 #include <math.h>
 #include <string>
-#include "opencv2/imgproc.hpp"
-#include "opencv2/imgcodecs.hpp"
-#include "opencv2/highgui.hpp"
-#include "opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/imgproc.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/imgcodecs.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/highgui.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 #include <numeric>
 #include <random>
 #include <algorithm>
 #include <time.h>
 #include "native-lib.h"
-#include <jni.h>
+#include "/home/quyenpham/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/jni.h"
 
 #define THRESHHOLD  50
 #define DEBUG 0
@@ -172,7 +172,7 @@ void PreProcess::EdgeProcess(){
 
         if (std::max(top_left.y, top_right.y) < 50 ) {
             printf("Di may anh len\n");
-            PreProcess::action = Action::dung_chup; //the fuck
+            PreProcess::action = Action::dung_chup;
             return;
         }
 
@@ -537,4 +537,14 @@ int main(int argc, char** argv ) {
     printf("Time: %.2fs\n", (double)(clock() - start)/CLOCKS_PER_SEC);
     Action a = dung_chup;
     printf("%d",a);
+}
+
+
+void getBitmapRowAsIntegers(Bitmap* bitmap, int y, int* pixels) {
+    unsigned int width = (*bitmap).width;
+    register unsigned int i = (width*y) + width - 1;
+    register unsigned int x;
+    for (x = width; x--; i--) {
+        pixels[x] = rgb((int)(*bitmap).red[i], (int)(*bitmap).green[i], (int)(*bitmap).blue[i]);
+    }
 }

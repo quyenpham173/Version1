@@ -41,7 +41,7 @@
 
 #ifndef OPENCV_DNN_LAYER_HPP
 #define OPENCV_DNN_LAYER_HPP
-#include <opencv2/dnn.hpp>
+#include </home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/dnn.hpp>
 
 namespace cv {
 namespace dnn {

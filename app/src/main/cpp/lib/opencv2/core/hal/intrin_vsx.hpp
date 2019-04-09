@@ -6,7 +6,7 @@
 #define OPENCV_HAL_VSX_HPP
 
 #include <algorithm>
-#include "opencv2/core/utility.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/utility.hpp"
 
 #define CV_SIMD128 1
 #define CV_SIMD128_64F 1

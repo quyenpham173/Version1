@@ -45,8 +45,8 @@
 
 #include <vector>
 #include <utility>
-#include "opencv2/core.hpp"
-#include "opencv2/videostab/global_motion.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/videostab/global_motion.hpp"
 
 namespace cv
 {

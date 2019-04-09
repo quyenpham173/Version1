@@ -43,8 +43,8 @@
 #ifndef OPENCV_PHOTO_HPP
 #define OPENCV_PHOTO_HPP
 
-#include "opencv2/core.hpp"
-#include "opencv2/imgproc.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/imgproc.hpp"
 
 /**
 @defgroup photo Computational Photography
@@ -833,7 +833,7 @@ CV_EXPORTS_W void stylization(InputArray src, OutputArray dst, float sigma_s = 6
 } // cv
 
 #ifndef DISABLE_OPENCV_24_COMPATIBILITY
-#include "opencv2/photo/photo_c.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/photo/photo_c.h"
 #endif
 
 #endif

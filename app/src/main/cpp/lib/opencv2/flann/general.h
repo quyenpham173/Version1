@@ -31,7 +31,7 @@
 #ifndef OPENCV_FLANN_GENERAL_H_
 #define OPENCV_FLANN_GENERAL_H_
 
-#include "opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 
 namespace cvflann
 {

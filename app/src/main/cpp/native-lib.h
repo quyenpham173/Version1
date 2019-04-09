@@ -11,10 +11,10 @@
 #include <iostream>
 #include <math.h>
 #include <string.h>
-#include "opencv2/imgproc.hpp"
-#include "opencv2/imgcodecs.hpp"
-#include "opencv2/highgui.hpp"
-#include "opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/imgproc.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/imgcodecs.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/highgui.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 #include <numeric>
 #include <random>
 #include <algorithm>
@@ -24,17 +24,17 @@ using namespace std;
 using namespace cv;
 
 enum Action {
-    dung_chup,
-    nghieng_len,
-    nghieng_xuong,
-    nghieng_trai,
-    nghieng_phai,
-    sang_trai,
-    sang_phai,
-    len_tren,
-    xuong_duoi,
-    nang_len,
-    ha_xuong
+    dung_chup = 0,
+    nghieng_len = 1,
+    nghieng_xuong = 2,
+    nghieng_trai = 3,
+    nghieng_phai = 4,
+    sang_trai = 5,
+    sang_phai = 6,
+    len_tren = 7,
+    xuong_duoi = 8,
+    nang_len = 9,
+    ha_xuong = 10
 };
 
 double area_triangle(double a, double b, double c);
@@ -79,7 +79,7 @@ public:
     cv::Vec2f original; // First detected edge
     cv::Vec2f parallel; // Edge that is parallel to original
     cv::Vec2f perpendicular1, perpendicular2; // Edges that are perpendicular to original
-    float angle_threshold = M_PI/10;
+    float angle_threshold = M_PI/10.0;
     float height_threshold, width_threshold;
     std::vector<cv::Vec2i> point_list;
     vector<cv::Vec2f> rec_lines;

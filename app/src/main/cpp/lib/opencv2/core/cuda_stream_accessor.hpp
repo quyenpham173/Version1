@@ -52,7 +52,7 @@
  */
 
 #include <cuda_runtime.h>
-#include "opencv2/core/cuda.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cuda.hpp"
 
 namespace cv
 {

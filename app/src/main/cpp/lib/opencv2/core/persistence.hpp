@@ -101,8 +101,8 @@ typedef struct CvMatND CvMatND;
 
 //! @} core_c
 
-#include "opencv2/core/types.hpp"
-#include "opencv2/core/mat.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/types.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/mat.hpp"
 
 namespace cv {
 
@@ -128,7 +128,7 @@ streams.
 
 Here is an example:
 @code
-    #include "opencv2/opencv.hpp"
+    #include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/opencv.hpp"
     #include <time.h>
 
     using namespace cv;

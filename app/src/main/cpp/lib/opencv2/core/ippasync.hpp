@@ -47,7 +47,7 @@
 
 #ifdef HAVE_IPP_A  // this file will be removed in OpenCV 4.0
 
-#include "opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 #include <ipp_async_op.h>
 #include <ipp_async_accel.h>
 

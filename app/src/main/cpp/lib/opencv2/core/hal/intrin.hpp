@@ -48,7 +48,7 @@
 #include <cmath>
 #include <float.h>
 #include <stdlib.h>
-#include "opencv2/core/cvdef.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvdef.h"
 
 #define OPENCV_HAL_ADD(a, b) ((a) + (b))
 #define OPENCV_HAL_AND(a, b) ((a) & (b))
@@ -141,26 +141,26 @@ using namespace CV_CPU_OPTIMIZATION_HAL_NAMESPACE;
 
 #if CV_SSE2 || CV_NEON || CV_VSX
 #define CV__SIMD_FORWARD 128
-#include "opencv2/core/hal/intrin_forward.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/hal/intrin_forward.hpp"
 #endif
 
 #if CV_SSE2
 
-#include "opencv2/core/hal/intrin_sse_em.hpp"
-#include "opencv2/core/hal/intrin_sse.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/hal/intrin_sse_em.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/hal/intrin_sse.hpp"
 
 #elif CV_NEON
 
-#include "opencv2/core/hal/intrin_neon.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/hal/intrin_neon.hpp"
 
 #elif CV_VSX
 
-#include "opencv2/core/hal/intrin_vsx.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/hal/intrin_vsx.hpp"
 
 #else
 
 #define CV_SIMD128_CPP 1
-#include "opencv2/core/hal/intrin_cpp.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/hal/intrin_cpp.hpp"
 
 #endif
 
@@ -175,8 +175,8 @@ using namespace CV_CPU_OPTIMIZATION_HAL_NAMESPACE;
 #if CV_AVX2
 
 #define CV__SIMD_FORWARD 256
-#include "opencv2/core/hal/intrin_forward.hpp"
-#include "opencv2/core/hal/intrin_avx.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/hal/intrin_forward.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/hal/intrin_avx.hpp"
 
 #endif
 

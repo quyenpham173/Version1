@@ -48,7 +48,7 @@
 #  error cvstd.hpp header must be compiled as C++
 #endif
 
-#include "opencv2/core/cvdef.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvdef.h"
 #include <cstddef>
 #include <cstring>
 #include <cctype>
@@ -1035,6 +1035,6 @@ namespace std
     static inline void swap(cv::String& a, cv::String& b) { a.swap(b); }
 }
 
-#include "opencv2/core/ptr.inl.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/ptr.inl.hpp"
 
 #endif //OPENCV_CORE_CVSTD_HPP

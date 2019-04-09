@@ -43,8 +43,8 @@
 #ifndef OPENCV_SUPERRES_HPP
 #define OPENCV_SUPERRES_HPP
 
-#include "opencv2/core.hpp"
-#include "opencv2/superres/optical_flow.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/superres/optical_flow.hpp"
 
 /**
   @defgroup superres Super Resolution

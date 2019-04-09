@@ -43,13 +43,13 @@
 #ifndef OPENCV_STITCHING_MATCHERS_HPP
 #define OPENCV_STITCHING_MATCHERS_HPP
 
-#include "opencv2/core.hpp"
-#include "opencv2/features2d.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/features2d.hpp"
 
-#include "opencv2/opencv_modules.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/opencv_modules.hpp"
 
 #ifdef HAVE_OPENCV_XFEATURES2D
-#  include "opencv2/xfeatures2d/cuda.hpp"
+#  include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/xfeatures2d/cuda.hpp"
 #endif
 
 namespace cv {

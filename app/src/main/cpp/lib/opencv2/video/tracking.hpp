@@ -44,8 +44,8 @@
 #ifndef OPENCV_TRACKING_HPP
 #define OPENCV_TRACKING_HPP
 
-#include "opencv2/core.hpp"
-#include "opencv2/imgproc.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/imgproc.hpp"
 
 namespace cv
 {

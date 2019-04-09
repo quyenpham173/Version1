@@ -48,8 +48,8 @@
 #  error cuda.hpp header must be compiled as C++
 #endif
 
-#include "opencv2/core.hpp"
-#include "opencv2/core/cuda_types.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cuda_types.hpp"
 
 /**
   @defgroup cuda CUDA-accelerated Computer Vision
@@ -384,7 +384,7 @@ such as cudaMalloc or cudaMallocPitch.
 Below is an example that utilizes BufferPool with StackAllocator:
 
 @code
-    #include <opencv2/opencv.hpp>
+    #include </home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/opencv.hpp>
 
     using namespace cv;
     using namespace cv::cuda
@@ -1044,6 +1044,6 @@ CV_EXPORTS void convertFp16(InputArray _src, OutputArray _dst, Stream& stream = 
 }} // namespace cv { namespace cuda {
 
 
-#include "opencv2/core/cuda.inl.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cuda.inl.hpp"
 
 #endif /* OPENCV_CORE_CUDA_HPP */

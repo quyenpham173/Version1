@@ -8,7 +8,7 @@
 #ifndef OPENCV_CORE_OPENCL_DEFS_HPP
 #define OPENCV_CORE_OPENCL_DEFS_HPP
 
-#include "opencv2/core/utility.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/utility.hpp"
 #include "cvconfig.h"
 
 namespace cv { namespace ocl {

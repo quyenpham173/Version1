@@ -43,7 +43,7 @@
 #ifndef OPENCV_IMGCODECS_HPP
 #define OPENCV_IMGCODECS_HPP
 
-#include "opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
 
 /**
   @defgroup imgcodecs Image file reading and writing

@@ -43,8 +43,8 @@
 #ifndef OPENCV_MINIFLANN_HPP
 #define OPENCV_MINIFLANN_HPP
 
-#include "opencv2/core.hpp"
-#include "opencv2/flann/defines.h"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
+#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/flann/defines.h"
 
 namespace cv
 {
