@@ -91,6 +91,7 @@ package com.example.version1;
         import org.opencv.android.BaseLoaderCallback;
         import org.opencv.android.LoaderCallbackInterface;
         import org.opencv.android.Utils;
+        import org.opencv.core.Core;
         import org.opencv.core.CvType;
         import org.opencv.core.Mat;
 
@@ -255,11 +256,23 @@ public class CaptureImage extends AppCompatActivity {
 
         @Override
         public void run() {
-            Log.d("testImage", "run begin");
+            Log.d(TAG, "run begin");
             ByteBuffer byteBuffer = image.getPlanes()[0].getBuffer();
             byte[] bytes = new byte[byteBuffer.remaining()];
             byteBuffer.get(bytes);
+            //int x = 0, y = 0;
             Bitmap mbitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+            Mat mymat = new Mat();
+            Utils.bitmapToMat(mbitmap, mymat);
+            int test = getvalue(mymat.getNativeObjAddr());
+            Log.d(TAG, "run: " + test);
+           // int width = mbitmap.getWidth();
+            //int height = mbitmap.getHeight();
+            //int pixels = mbitmap.getPixel(x, y);
+           // int[] pixels = new int[width * height];
+            //mbitmap.getPixels(pixels, 0, width, 0, 0, width, height);
+            //pixels = new byte[width * height * 4];
+
 /*            Mat mymat = new Mat();
             Utils.bitmapToMat(mbitmap, mymat);
             int test = getvalue(mymat);*/
@@ -288,14 +301,14 @@ public class CaptureImage extends AppCompatActivity {
                 return outbit;
             }
             return bitmap.copy(bitmap.getConfig(), true);*/
-            int width = mbitmap.getWidth();
+/*            int width = mbitmap.getWidth();
             int height = mbitmap.getHeight();
             nativeInitBitmap(width, height);
             int[] pixels = new int[width];
             for (int y = 0; y < height; y++) {
                 mbitmap.getPixels(pixels, 0, width, 0, y, width, 1);
                 nativeSetBitmapRow(y, pixels);
-            }
+            }*/
             FileOutputStream fileOutputStream = null;
             try {
                 fileOutputStream = new FileOutputStream(imageFile);
@@ -311,9 +324,9 @@ public class CaptureImage extends AppCompatActivity {
             return (effectType / 300 == 1);
         }
      //   public native void jprocess(Mat mat);
-        private native int getvalue(Mat mat);
-        public native int nativeInitBitmap(int width, int height);
-        public native void nativeSetBitmapRow(int y, int[] pixels);
+        private native int getvalue(long mat);
+/*        public native int nativeInitBitmap(int width, int height);
+        public native void nativeSetBitmapRow(int y, int[] pixels);*/
     }
 /*    private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override

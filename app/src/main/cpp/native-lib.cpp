@@ -1,19 +1,23 @@
 #include <iostream>
 #include <math.h>
 #include <string>
-#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/imgproc.hpp"
-#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/imgcodecs.hpp"
-#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/highgui.hpp"
-#include "/home/quyenpham/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp"
+#include "opencv2/imgproc.hpp"
+#include "opencv2/imgcodecs.hpp"
+#include "opencv2/highgui.hpp"
+#include "opencv2/core.hpp"
 #include <numeric>
 #include <random>
 #include <algorithm>
 #include <time.h>
 #include "native-lib.h"
-#include "/home/quyenpham/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/jni.h"
+#include "jni.h"
+
 
 #define THRESHHOLD  50
 #define DEBUG 0
+inline int rgb(int red, int green, int blue) {
+    return (0xFF << 24) | (red << 16) | (green << 8) | blue;
+}
 
 using namespace std;
 using namespace cv;
@@ -539,6 +543,76 @@ int main(int argc, char** argv ) {
     printf("%d",a);
 }
 
+/*void getBitmapRowAsIntegers(Bitmap* bitmap, int y, int* pixels) {
+    unsigned int width = (*bitmap).width;
+    register unsigned int i = (width*y) + width - 1;
+    register unsigned int x;
+    for (x = width; x--; i--) {
+        pixels[x] = rgb((int)(*bitmap).red[i], (int)(*bitmap).green[i], (int)(*bitmap).blue[i]);
+    }
+}
+
+void freeUnsignedCharArray(unsigned char** arrayPointer) {
+    if (*arrayPointer != NULL) {
+        free(*arrayPointer);
+        *arrayPointer = NULL;
+    }
+}
+
+void deleteBitmap(Bitmap* bitmap) {
+    freeUnsignedCharArray(&(*bitmap).red);
+    freeUnsignedCharArray(&(*bitmap).green);
+    freeUnsignedCharArray(&(*bitmap).blue);
+    freeUnsignedCharArray(&(*bitmap).transformList.transforms);
+    (*bitmap).transformList.size = 0;
+    (*bitmap).width = 0;
+    (*bitmap).height = 0;
+}
+int newUnsignedCharArray(unsigned int size, unsigned char** arrayPointer) {
+    unsigned int numBytes = size * sizeof(unsigned char);
+    *arrayPointer = (unsigned char*) malloc(numBytes);
+    if (arrayPointer == NULL) {
+        return UCHAR_ARRAY_ERROR;
+    }
+
+    memset(*arrayPointer, 0, numBytes);
+    return MEMORY_OK;
+}
+
+int initBitmapMemory(Bitmap* bitmap, int width, int height) {
+    deleteBitmap(bitmap);
+
+    (*bitmap).width = width;
+    (*bitmap).height = height;
+
+    (*bitmap).redWidth = width;
+    (*bitmap).redHeight = height;
+
+    (*bitmap).greenWidth = width;
+    (*bitmap).greenHeight = height;
+
+    (*bitmap).blueWidth = width;
+    (*bitmap).blueHeight = height;
+
+    int size = width*height;
+
+    int resultCode = newUnsignedCharArray(size, &(*bitmap).red);
+    if (resultCode != MEMORY_OK) {
+        return resultCode;
+    }
+
+    resultCode = newUnsignedCharArray(size, &(*bitmap).green);
+    if (resultCode != MEMORY_OK) {
+        return resultCode;
+    }
+
+    resultCode = newUnsignedCharArray(size, &(*bitmap).blue);
+    if (resultCode != MEMORY_OK) {
+        return resultCode;
+    }
+}*/
+
+/*
 
 void getBitmapRowAsIntegers(Bitmap* bitmap, int y, int* pixels) {
     unsigned int width = (*bitmap).width;
@@ -547,4 +621,4 @@ void getBitmapRowAsIntegers(Bitmap* bitmap, int y, int* pixels) {
     for (x = width; x--; i--) {
         pixels[x] = rgb((int)(*bitmap).red[i], (int)(*bitmap).green[i], (int)(*bitmap).blue[i]);
     }
-}
+}*/
