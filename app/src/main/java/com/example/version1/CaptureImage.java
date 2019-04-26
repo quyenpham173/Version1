@@ -84,6 +84,7 @@ package com.example.version1;
         import android.util.SparseIntArray;
         import android.view.Surface;
         import android.view.TextureView;
+        import android.widget.ImageView;
         import android.widget.Toast;
 
         import com.example.tesseract.R;
@@ -95,9 +96,11 @@ package com.example.version1;
         import org.opencv.core.CvType;
         import org.opencv.core.Mat;
 
+        import java.io.ByteArrayInputStream;
         import java.io.File;
         import java.io.FileOutputStream;
         import java.io.IOException;
+        import java.io.InputStream;
         import java.nio.ByteBuffer;
         import java.util.ArrayList;
         import java.util.Arrays;
@@ -109,6 +112,7 @@ package com.example.version1;
 
 
 public class CaptureImage extends AppCompatActivity {
+    ImageView imageView;
 
     private static String TAG = "MainActivity";
 
@@ -190,7 +194,7 @@ public class CaptureImage extends AppCompatActivity {
                             break;
                         case STATE_WAIT_LOCK:
                             Integer afState = result.get(CaptureResult.CONTROL_AF_STATE);
-                            if (afState == CaptureRequest.CONTROL_AF_STATE_FOCUSED_LOCKED || afState == null) {
+                            if (afState == CaptureRequest.CONTROL_AF_STATE_FOCUSED_LOCKED) {
                                 unlockFocus();
                                 Toast.makeText(getApplicationContext(), "Focus Lock", Toast.LENGTH_SHORT).show();
                                 captureStillImage();
@@ -242,6 +246,7 @@ public class CaptureImage extends AppCompatActivity {
     private static File imageFile;
 
     public class ImageSave implements Runnable {
+
         private Image image;
         private final ImageReader imageReader;
 
@@ -259,35 +264,16 @@ public class CaptureImage extends AppCompatActivity {
             Log.d(TAG, "run begin");
             ByteBuffer byteBuffer = image.getPlanes()[0].getBuffer();
             byte[] bytes = new byte[byteBuffer.remaining()];
+            //InputStream input=new ByteArrayInputStream(bytes);
             byteBuffer.get(bytes);
             //int x = 0, y = 0;
             Bitmap mbitmap = BitmapFactory.decodeByteArray(bytes,0,bytes.length);
+            //Bitmap mbitmap = Bitmap.createBitmap(imageView.getWidth(),imageView.getHeight(),Bitmap.Config.ARGB_8888);
             Mat mymat = new Mat();
             Utils.bitmapToMat(mbitmap, mymat);
-            int test = getvalue(mymat.getNativeObjAddr());
-            Log.d(TAG, "run: " + test);
-           // int width = mbitmap.getWidth();
-            //int height = mbitmap.getHeight();
-            //int pixels = mbitmap.getPixel(x, y);
-           // int[] pixels = new int[width * height];
-            //mbitmap.getPixels(pixels, 0, width, 0, 0, width, height);
-            //pixels = new byte[width * height * 4];
-
-/*            Mat mymat = new Mat();
-            Utils.bitmapToMat(mbitmap, mymat);
-            int test = getvalue(mymat);*/
-            //Log.d("testImage", "run: "+ test);
-/*            private static void sendBitmapToNative(NativeBitmap mbitmap) {
-                int width = mbitmap.getWidth();
-                int height = mbitmap.getHeight();
-                nativeInitBitmap(width, height);
-                int[] pixels = new int[width];
-                for (int y = 0; y < height; y++) {
-                    mbitmap.getPixels(pixels, 0, width, 0, y, width, 1);
-                    //gets pixels of the y’th row
-                    nativeSetBitmapRow(y, pixels);
-                }
-            }*/
+           // imageView.setImageBitmap(mbitmap);
+            int test = getvalue(mymat.nativeObj);
+            Log.d(TAG, "result: " + test);
 /*            Mat inMat = new Mat(mbitmap.getWidth(), mbitmap.getHeight(), CvType.CV_8UC3);
             Mat outMat = new Mat();
             Utils.bitmapToMat(mbitmap, inMat);
@@ -301,14 +287,6 @@ public class CaptureImage extends AppCompatActivity {
                 return outbit;
             }
             return bitmap.copy(bitmap.getConfig(), true);*/
-/*            int width = mbitmap.getWidth();
-            int height = mbitmap.getHeight();
-            nativeInitBitmap(width, height);
-            int[] pixels = new int[width];
-            for (int y = 0; y < height; y++) {
-                mbitmap.getPixels(pixels, 0, width, 0, y, width, 1);
-                nativeSetBitmapRow(y, pixels);
-            }*/
             FileOutputStream fileOutputStream = null;
             try {
                 fileOutputStream = new FileOutputStream(imageFile);
@@ -325,23 +303,9 @@ public class CaptureImage extends AppCompatActivity {
         }
      //   public native void jprocess(Mat mat);
         private native int getvalue(long mat);
-/*        public native int nativeInitBitmap(int width, int height);
-        public native void nativeSetBitmapRow(int y, int[] pixels);*/
+       // public native int nativeInitBitmap(int width, int height);
+       // public native void nativeSetBitmapRow(int y, int[] pixels);
     }
-/*    private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
-        @Override
-        public void onManagerConnected(int status) {
-            if (status == LoaderCallbackInterface.SUCCESS ) {
-                // now we can call opencv code !
-                Bitmap mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.cmc7);
-                Mat myMat = new Mat();
-                Utils.bitmapToMat(mBitmap, myMat);
-
-            } else {
-                super.onManagerConnected(status);
-            }
-        }
-    };*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -626,9 +590,4 @@ public class CaptureImage extends AppCompatActivity {
     static {
         System.loadLibrary("Preprocess");
     }
-/*
-
-
-
-    private native int DetectPage();*/
 }

@@ -11,6 +11,9 @@
 #include <time.h>
 #include "native-lib.h"
 #include "jni.h"
+#include <numeric>
+#include <android/log.h>
+#include <tuple>
 
 
 #define THRESHHOLD  50
@@ -22,78 +25,6 @@ inline int rgb(int red, int green, int blue) {
 using namespace std;
 using namespace cv;
 
-//DINH NGHIA CAC DONG TAC
-//enum Action {
-//    dung_chup,
-//    nghieng_len,
-//    nghieng_xuong,
-//    nghieng_trai,
-//    nghieng_phai,
-//    sang_trai,
-//    sang_phai,
-//    len_tren,
-//    xuong_duoi,
-//    nang_len,
-//    ha_xuong
-////};
-//
-//double area_triangle(double a, double b, double c);
-//
-//void imageresize (cv::Mat image_in, cv::Mat *image_out);
-//
-//void enforceContrast(cv::Mat image, cv::Mat *dst, string option="global");
-//
-//void enforceThreshold(cv::Mat image, cv::Mat *Threshold);
-//
-//void smoothImage(cv::Mat image, int kerSize,  cv::Mat *dst, string option = "Gausian");
-
-//double area_triangle(double a, double b, double c) {
-//    double s = (a + b + c)/2;
-//    s = sqrt(s * (s - a) * (s - b) * (s - c));
-//    return s;
-//}
-
-//class PreProcess {
-//public:
-//    PreProcess(cv::Mat image, float height_threshold, float width_threshold);
-//    int CharSize(char *image);
-//    float morphological(int charSize);
-//    void detectFromOrigin();
-//    void detectEdges(vector<cv::Vec2f> lines);
-//    void rotate(char *image);
-//    void showImageWithLine();
-//    void process();
-//    void printlines();
-//    void EdgeProcess();
-//    void boundingbox(cv::Mat src, vector <cv::Vec2f> lines);
-//    int linear_equation(float a1, float b1, float c1, float a2, float b2, float c2, cv::Point2f *_point);
-//    int take_action();
-//    cv::Point2f* take_point();
-//
-//private:
-//    int numofEdge;
-//    cv::Mat image;
-//    int status;
-//    float dilation;
-//    int charSize;
-//    cv::Vec2f original; // First detected edge
-//    cv::Vec2f parallel; // Edge that is parallel to original
-//    cv::Vec2f perpendicular1, perpendicular2; // Edges that are perpendicular to original
-//    float angle_threshold = M_PI/10;
-//    float height_threshold, width_threshold;
-//    std::vector<cv::Vec2i> point_list;
-//    vector<cv::Vec2f> rec_lines;
-//    cv::Point2f point[4];
-//    Action action;
-//
-//    struct str {
-//        bool operator() ( Point2f a, Point2f b ){
-//            if ( a.y != b.y )
-//                return a.y < b.y;
-//            return a.x <= b.x ;
-//        }
-//    } comp;
-//};
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_example_version1_MainActivity_stringFromJNI(
         JNIEnv *env,
@@ -295,11 +226,11 @@ void PreProcess::detectEdges(vector<cv::Vec2f> lines) {
     rec_lines.push_back(perpendicular1);
     rec_lines.push_back(perpendicular2);
 }
-extern "C" JNIEXPORT void JNICALL
+/*extern "C" JNIEXPORT void JNICALL
 Java_com_example_version1_CaptureImage_00024ImageSave_jprocess(JNIEnv *env, jobject obj, jobject mat) {
     PreProcess *test = (PreProcess *) mat;
     test->process();
-}
+}*/
 void PreProcess::process(){
     cv::Mat candy_img, dilation_dst, gray, dst;
     vector<cv::Vec2f> lines;
@@ -316,7 +247,7 @@ void PreProcess::process(){
     }
 
     //cv::cvtColor(dilation_dst, gray, cv::COLOR_BGR2GRAY);
-    enforceContrast(dilation_dst, &dst, "local");
+    enforceContrast(dilation_dst, dst, "local");
     smoothImage(dst, PreProcess::charSize, &dst);
     enforceThreshold(dst, &dst);
     cv::Canny(dst, candy_img, 20, 50, 3, true);
@@ -385,14 +316,14 @@ void PreProcess::boundingbox(cv::Mat src, vector <cv::Vec2f> lines){
     RNG rng(12345);
     vector<cv::Vec4i> hierarchy;
     cv::Mat candy_img, gray;
-    cv::cvtColor(src, gray, cv::COLOR_GRAY2BGR);
+    cv::cvtColor(src, gray, cv::COLOR_BGR2GRAY, 1);
     cv::Canny(gray, candy_img, 50, 100, 3, true);
     cv::findContours(candy_img, contours, hierarchy, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
     vector<vector<Point> > contours_poly( contours.size() );
     vector<Rect> boundRect( contours.size() );
     //vector<Point2f>center( contours.size() );
     //vector<float>radius( contours.size() );
-    std::vector<int> height_list;
+    std::vector<double> height_list;
     for( int i = 0; i < contours.size(); i++ ) {
         approxPolyDP( Mat(contours[i]), contours_poly[i], 3, true );
         boundRect[i] = boundingRect( Mat(contours_poly[i]) );
@@ -409,7 +340,10 @@ void PreProcess::boundingbox(cv::Mat src, vector <cv::Vec2f> lines){
         height_list.push_back(height);
 
     }
-    double sum = std::accumulate(height_list.begin(), height_list.end(), 0.0);
+//    double sum = std::accumulate(height_list.begin(), height_list.end(), 0.0);
+    double sum = 0.0;
+    for(auto i = 0; i<height_list.size(); i++)
+        sum += height_list.at(i);
     double mean = sum / height_list.size();
     double accum = 0.0;
     std::for_each (std::begin(height_list), std::end(height_list), [&](const double d) {
@@ -436,11 +370,11 @@ void PreProcess::boundingbox(cv::Mat src, vector <cv::Vec2f> lines){
     }
 
     char_size = (int) char_size / count;
-    if (charSize < 10)
+    if (char_size < 10)
         this->charSize = 5;
     else
         this->charSize = (int) char_size/2;
-    printf("Kernel Size = %d\n", charSize);
+//    printf("Kernel Size = %d\n", charSize);
     //charSize = 6;
     //printf("PUSSHHHHHHHHH");
     //std::cout << '\n";
@@ -485,30 +419,70 @@ void enforceThreshold(cv::Mat image, cv::Mat *Threshold) {
     cv::threshold(image, *Threshold, 50, 255, cv::THRESH_TOZERO);
 }
 
-void enforceContrast(cv::Mat image, cv::Mat *dst, string option) {
+void enforceContrast(cv::Mat image, cv::Mat &dst, string option) {
+    __android_log_print(0, "begin", "a");
     std::string local = "local";
-    //image.convertTo(image, CV_8UC1);
-    printf("SAI O DAYYYYYYYY");
-    if (option.compare(local) == 0) {
+    image.convertTo(image, CV_8UC1);
+   if (option == local) {
+       __android_log_print(0, "begin", "on if");
         cv::Ptr<cv::CLAHE> clahe = cv::createCLAHE(2.0);
-        clahe->apply(image, *dst);
-    }
-    else
-        cv::equalizeHist(image, *dst);
-    printf("ENDDDDDDDDDDDDDDDDDD");
+       __android_log_print(0, "begin", "end if");
+        clahe->apply(image, dst);
+       __android_log_print(0, "begin", "b");
+    } else
+    std::cout<<"abc";
+        cv::equalizeHist(image, dst);
 }
 
-void smoothImage(cv::Mat image, int kerSize,  cv::Mat *dst, string option) {
+void smoothImage(cv::Mat image, int kerSize, cv::Mat *dst, string option) {
     string str = "Average";
     if (kerSize % 2 == 0)
         kerSize = kerSize - 1;
-    if (str.compare(str) == 0)
+    if (option == str)
         cv::blur(image, *dst, cv::Size(kerSize, kerSize));
     else
         cv::GaussianBlur(image, *dst, cv::Size(kerSize, kerSize), 2);
 }
 
-int main(int argc, char** argv ) {
+/*extern "C" {
+JNIEXPORT jint JNICALL Java_com_example_version1_CaptureImage_00024ImageSave_getvalue
+        (JNIEnv *, jobject, jint argc, char** argv) {
+    clock_t start = clock();
+    float width_threshold = 200;
+    float height_threshold = 300;
+    cv::Mat dst;
+    cv::Mat image, image_resize;
+    if (argc == 1) {
+        help();
+        return 0;
+    }
+
+    string filename = argv[1];
+    if (filename.empty()) {
+        help();
+        cout << "Nhap vao anh" << endl;
+        return -1;
+    }
+    image = cv::imread(filename, 0);
+    if(image.empty()) {
+        help();
+        cout << "can not open " << filename << endl;
+        return -1;
+    }
+    // Khoi tao
+    //cv::cvtColor(image, dst, cv::COLOR_GRAY2BGR);
+
+    imageresize(image, &image_resize);
+
+    PreProcess image_process(image_resize, width_threshold, height_threshold);
+    image_process.process();
+    printf("Time: %.2fs\n", (double)(clock() - start)/CLOCKS_PER_SEC);
+    //Action a = dung_chup;
+    //printf("%d",a);
+    return image_process.action;
+} ;
+}*/
+/*int main(int argc, char** argv ) {
     clock_t start = clock();
     float width_threshold = 200;
     float height_threshold = 300;
@@ -541,15 +515,19 @@ int main(int argc, char** argv ) {
     printf("Time: %.2fs\n", (double)(clock() - start)/CLOCKS_PER_SEC);
     Action a = dung_chup;
     printf("%d",a);
-}
+}*/
 
-/*void getBitmapRowAsIntegers(Bitmap* bitmap, int y, int* pixels) {
-    unsigned int width = (*bitmap).width;
-    register unsigned int i = (width*y) + width - 1;
-    register unsigned int x;
-    for (x = width; x--; i--) {
-        pixels[x] = rgb((int)(*bitmap).red[i], (int)(*bitmap).green[i], (int)(*bitmap).blue[i]);
+/*Add native function */
+
+/*int newUnsignedCharArray(unsigned int size, unsigned char** arrayPointer) {
+    unsigned int numBytes = size * sizeof(unsigned char);
+    *arrayPointer = (unsigned char*) malloc(numBytes);
+    if (arrayPointer == NULL) {
+        return UCHAR_ARRAY_ERROR;
     }
+
+    memset(*arrayPointer, 0, numBytes);
+    return MEMORY_OK;
 }
 
 void freeUnsignedCharArray(unsigned char** arrayPointer) {
@@ -567,16 +545,6 @@ void deleteBitmap(Bitmap* bitmap) {
     (*bitmap).transformList.size = 0;
     (*bitmap).width = 0;
     (*bitmap).height = 0;
-}
-int newUnsignedCharArray(unsigned int size, unsigned char** arrayPointer) {
-    unsigned int numBytes = size * sizeof(unsigned char);
-    *arrayPointer = (unsigned char*) malloc(numBytes);
-    if (arrayPointer == NULL) {
-        return UCHAR_ARRAY_ERROR;
-    }
-
-    memset(*arrayPointer, 0, numBytes);
-    return MEMORY_OK;
 }
 
 int initBitmapMemory(Bitmap* bitmap, int width, int height) {
@@ -610,15 +578,28 @@ int initBitmapMemory(Bitmap* bitmap, int width, int height) {
     if (resultCode != MEMORY_OK) {
         return resultCode;
     }
+}
+
+static Bitmap bitmap;*/
+extern "C" {
+
+/*int Java_com_xinlan_imageeditlibrary_editimage_fliter_PhotoProcessing_nativeInitBitmap(JNIEnv* env, jobject thiz, jint width, jint height) {
+    return initBitmapMemory(&bitmap, width, height);
 }*/
 
-/*
 
-void getBitmapRowAsIntegers(Bitmap* bitmap, int y, int* pixels) {
-    unsigned int width = (*bitmap).width;
-    register unsigned int i = (width*y) + width - 1;
-    register unsigned int x;
-    for (x = width; x--; i--) {
-        pixels[x] = rgb((int)(*bitmap).red[i], (int)(*bitmap).green[i], (int)(*bitmap).blue[i]);
-    }
-}*/
+JNIEXPORT jint JNICALL Java_com_example_version1_CaptureImage_00024ImageSave_getvalue
+        (JNIEnv*, jobject, jlong inpAddr){
+    cv::Mat* inMat = (cv::Mat*) inpAddr;
+    cv::Mat image = *inMat;
+    cv::Mat image_out;
+    //char* filepath = "/home/quyenpham/Downloads/test_image.jpg";
+    //cv::Mat img,gray_img;
+    //img = cv::imread(filepath, CV_LOAD_IMAGE_COLOR);
+    //cv::cvtColor( img, gray_img, CV_BGR2GRAY );
+    imageresize(image, &image_out);
+    PreProcess *ptr_process = new PreProcess(image_out, 200, 300);
+    ptr_process->process();
+    return ptr_process->action;
+};
+}

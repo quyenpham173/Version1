@@ -1,7 +1,9 @@
 //
 // Created by ykuta on 02-Mar-19.
 //
-
+#ifndef BITMAP
+#define BITMAP
+#endif
 #ifndef READINGASSISTANCE_NATIVE_LIB_H
 #define READINGASSISTANCE_NATIVE_LIB_H
 #define JNIIMPORT
@@ -23,6 +25,8 @@
 using namespace std;
 using namespace cv;
 
+static const int MEMORY_OK = 0;
+static const int UCHAR_ARRAY_ERROR = 3;
 enum Action {
     dung_chup = 0,
     nghieng_len = 1,
@@ -37,15 +41,39 @@ enum Action {
     ha_xuong = 10
 };
 
+typedef struct {
+    float cropBounds[4]; //left, top, right, bottom
+    unsigned char* transforms;
+    int size;
+} TransformList;
+
+typedef struct {
+    unsigned int width;
+    unsigned int height;
+
+    unsigned int redWidth;
+    unsigned int redHeight;
+    unsigned int greenWidth;
+    unsigned int greenHeight;
+    unsigned int blueWidth;
+    unsigned int blueHeight;
+
+    unsigned char* red;
+    unsigned char* green;
+    unsigned char* blue;
+
+    TransformList transformList;
+} Bitmap;
+
 double area_triangle(double a, double b, double c);
 
 void imageresize (cv::Mat image_in, cv::Mat *image_out);
 
-void enforceContrast(cv::Mat image, cv::Mat *dst, string option="global");
+void enforceContrast(cv::Mat image, cv::Mat &dst, string option="global");
 
 void enforceThreshold(cv::Mat image, cv::Mat *Threshold);
 
-void smoothImage(cv::Mat image, int kerSize,  cv::Mat *dst, string option = "Gausian");
+void smoothImage(cv::Mat image, int kerSize, cv::Mat *dst, string option = "Gausian");
 
 double area_triangle(double a, double b, double c) {
     double s = (a + b + c)/2;
